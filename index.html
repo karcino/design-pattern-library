@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Frontend Design Pattern Library</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Kuratierte Sammlung formal extrahierter Frontend-Design-Patterns. Quelle: Notion. Demo: Bottega Veneta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/tile.css">
+</head>
+<body>
+
+<header class="page">
+  <div class="section-no">
+    <span>00 · Frontend Design Pattern Library · Notion → static</span>
+    <span class="snap">v0.1 · manifest-driven</span>
+  </div>
+  <h1>Pattern-Bibliothek<br><em>extrahiert · katalogisiert · belegt</em></h1>
+  <p class="subtitle">Jeder Eintrag ist eine Webseite, die ein Pattern beispielhaft löst. Tokens, Layout-Konventionen und die Begründung werden formell aus der Quelle gezogen — nicht beschrieben, sondern belegt mit DOM-Evidenz. Quelle: <code>Notion · Frontend Design Pattern Library</code>. Screenshots via Hetzner-Thumbnailer.</p>
+  <div class="focus">
+    <span>Pattern-Extraktion</span>
+    <span>Tokens</span>
+    <span>Evidenz</span>
+    <span>Workflow</span>
+  </div>
+</header>
+
+<section class="filterbar" id="filterbar">
+  <span class="flabel">Tags</span>
+  <div class="chips" id="chips"></div>
+</section>
+
+<main class="gallery">
+  <div class="grid-tiles" id="grid"></div>
+</main>
+
+<footer class="foot">
+  <div class="head">Workflow</div>
+  <div class="meta" id="meta">
+    <span>Lade patterns.json …</span>
+    <span>Schema v1.0</span>
+  </div>
+</footer>
+
+<script type="module" src="js/load-patterns.js"></script>
+</body>
+</html>

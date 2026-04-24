@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Pattern · Frontend Design Pattern Library</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/tile.css">
+</head>
+<body>
+
+<main class="detail" id="detail">
+  <div class="detail-head">
+    <div class="breadcrumb"><a href="index.html">← Pattern-Bibliothek</a></div>
+    <h1 id="d-name">…</h1>
+    <p class="tagline" id="d-tagline">…</p>
+    <div class="meta-row" id="d-meta"></div>
+  </div>
+
+  <section class="chap">
+    <div class="head"><span class="no">01</span><span>Hero</span></div>
+    <div id="d-hero"></div>
+  </section>
+
+  <section class="chap">
+    <div class="head"><span class="no">02</span><span>Color Tokens</span></div>
+    <div class="swatches" id="d-colors"></div>
+  </section>
+
+  <section class="chap">
+    <div class="head"><span class="no">03</span><span>Typography</span></div>
+    <div class="type-table" id="d-type"></div>
+  </section>
+
+  <section class="chap">
+    <div class="head"><span class="no">04</span><span>Spacing & Grid</span></div>
+    <div class="spacing-row" id="d-spacing"></div>
+    <p class="lead" id="d-grid" style="margin-top:14px;"></p>
+  </section>
+
+  <section class="chap">
+    <div class="head"><span class="no">05</span><span>Patterns · Evidence</span></div>
+    <div class="pattern-list" id="d-patterns"></div>
+  </section>
+
+  <section class="chap">
+    <div class="head"><span class="no">06</span><span>Notes</span></div>
+    <div class="notes-block" id="d-notes"></div>
+  </section>
+
+  <section class="chap">
+    <div class="head"><span class="no">07</span><span>Stack-Hint</span></div>
+    <p class="lead" id="d-stack"></p>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="head">Frontend Design Pattern Library</div>
+  <div class="meta">
+    <span>Quelle Notion · Screenshots via Hetzner-Thumbnailer</span>
+    <span>Schema v1.0</span>
+  </div>
+</footer>
+
+<script type="module" src="js/render-detail.js"></script>
+</body>
+</html>

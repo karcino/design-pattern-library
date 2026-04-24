@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0",
+  "generated": "2026-04-25",
+  "source": {
+    "kind": "notion",
+    "database_url": "https://www.notion.so/34c34722aadb81f0919ad7cf843adce5",
+    "data_source_id": "34c34722-aadb-81aa-a140-000b5270216b"
+  },
+  "patterns": [
+    {
+      "slug": "bottega-swipe-vertical",
+      "name": "Bottega · Swipe Vertical PDP",
+      "url": "https://www.bottegaveneta.com/de-de/kaschmirpullover-navy-811456V4WD04121.html",
+      "notion_url": "https://www.notion.so/shinyfog/Bottega-Design-swipe-vertical-pattern-34c34722aadb81fcb86dcdbbb7847f20",
+      "screenshot": "public/thumbnails/bottega-swipe-vertical.webp",
+      "extracted_at": "2026-04-25",
+      "tags": ["pdp", "luxury-retail", "vertical-scroll", "sticky-cta", "editorial"],
+      "tagline": "Editorial product page that abandons the thumbnail grid for a full-bleed vertical image stack with a sticky purchase sheet.",
+      "tokens": {
+        "colors": [
+          { "name": "ink", "hex": "#000000", "role": "Body & headlines, brand mark" },
+          { "name": "paper", "hex": "#ffffff", "role": "Page background — full bleed" },
+          { "name": "verde-bottega", "hex": "#404e3e", "role": "Brand accent (mute, used sparingly)" },
+          { "name": "ink-soft", "hex": "#666666", "role": "Secondary copy, helpers" },
+          { "name": "rule", "hex": "#e6e6e6", "role": "Hairline divider, never bolder" }
+        ],
+        "typography": [
+          { "role": "h1 product name", "family": "Helvetica, Arial, sans-serif", "size": "16–20px", "weight": 400, "tracking": "0", "case": "title" },
+          { "role": "price", "family": "Helvetica, Arial, sans-serif", "size": "14–16px", "weight": 400, "tracking": "0" },
+          { "role": "label / helper", "family": "Helvetica, Arial, sans-serif", "size": "11–12px", "weight": 400, "tracking": "0.04em", "case": "uppercase" },
+          { "role": "body", "family": "Helvetica, Arial, sans-serif", "size": "14px", "weight": 400, "tracking": "0", "leading": "1.5" }
+        ],
+        "spacing": ["0", "8", "12", "16", "24", "40", "64", "96"],
+        "radii": ["0"],
+        "grid": "Single-column full-bleed image stack on mobile · two-up split block on desktop. No max-width on hero images."
+      },
+      "patterns": [
+        {
+          "name": "Vertical Block Image Stack",
+          "purpose": "Replace the carousel with sequenced full-bleed images so the user scrolls through the product like an editorial spread.",
+          "evidence": "DOM: `.c-pdp__topblockimages` + `.c-pdp__bottomblockimages__wrapper` — every image rendered as its own stacked block; mobile shows top block, desktop pairs into two-up via `c-pdp__blockimages--twoimages`.",
+          "where_to_use": "High-consideration product pages where image quality is the proof. Avoid for SKU-heavy commodity catalogs."
+        },
+        {
+          "name": "Sticky Purchase Sheet",
+          "purpose": "Decouple decision from discovery — CTA, size, and price stay anchored while content flows past.",
+          "evidence": "DOM: `.l-pdp__bottom__sheet.sticky-bar-white.show` + `.l-product__stickyctawrapper` + `.l-pdp__content__sticky`.",
+          "where_to_use": "Long-form PDPs or any flow where conversion shouldn't compete with scroll depth."
+        },
+        {
+          "name": "Discover-Hint Onboarding",
+          "purpose": "Educate the visitor that the page rewards scrolling — luxury sites can't rely on user instinct.",
+          "evidence": "DOM: `.c-pdp__discover-hint-bar-content` + `#scrollToDiscoverPopin`. Single-shot, dismissible.",
+          "where_to_use": "Non-standard layouts that diverge from e-commerce convention."
+        },
+        {
+          "name": "BEM with Layout/Component/Utility Prefixes",
+          "purpose": "Self-documenting class names that scope responsibility — `l-` for layout, `c-` for component, `u-` for utility, `@md` / `@lg` viewport modifiers (`u-hidden@md`).",
+          "evidence": "Dominant convention across the markup: `c-pdp__topblockimages`, `l-pdp__actions--sticky`, `u-hidden-from@md`.",
+          "where_to_use": "Large product surfaces with many overlapping responsive variants."
+        },
+        {
+          "name": "Universal Lazyload",
+          "purpose": "Every image deferred until viewport-near; first paint stays editorial-fast despite the heavy image stack.",
+          "evidence": "Class `lazyload` applied to nav, PDP, carousel images alike — single shared loader.",
+          "where_to_use": "Any image-heavy long page. Pair with LQIP placeholders for real polish."
+        }
+      ],
+      "notes": "Counterintuitive move: Bottega trades the conventional thumbnail-strip carousel for a vertical editorial cadence. The page reads more like a magazine spread than a product configurator. Conversion is preserved by the sticky purchase sheet — so scroll-depth and add-to-cart remain decoupled. Worth stealing on any product surface where the imagery is the argument.",
+      "stack_hint": "Salesforce Commerce Cloud (Demandware) — `Sites-BV-R-WEUR-Site` in CSS path; CDN `bottega-veneta.dam.kering.com` (Kering DAM)."
+    }
+  ]
+}
