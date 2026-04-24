@@ -67,7 +67,27 @@
         }
       ],
       "notes": "Counterintuitive move: Bottega trades the conventional thumbnail-strip carousel for a vertical editorial cadence. The page reads more like a magazine spread than a product configurator. Conversion is preserved by the sticky purchase sheet — so scroll-depth and add-to-cart remain decoupled. Worth stealing on any product surface where the imagery is the argument.",
-      "stack_hint": "Salesforce Commerce Cloud (Demandware) — `Sites-BV-R-WEUR-Site` in CSS path; CDN `bottega-veneta.dam.kering.com` (Kering DAM)."
+      "stack_hint": "Salesforce Commerce Cloud (Demandware) — `Sites-BV-R-WEUR-Site` in CSS path; CDN `bottega-veneta.dam.kering.com` (Kering DAM).",
+      "evidence_shots": [
+        {
+          "image": "public/thumbnails/bottega-evidence-vertical-stack.png",
+          "kind": "fullpage",
+          "ref": "Vertical Block Image Stack",
+          "caption": "Fullpage-Capture. Zwei `c-pdp__topblockimages__imagecontainer`-Blöcke oben (zwei-up auf Desktop), Configurator in der Mitte, `c-pdp__bottomblockimages__wrapper` unten. Kein Carousel — nur scrollbare Editorial-Stapel."
+        },
+        {
+          "image": "public/thumbnails/bottega-evidence-twoup-block.png",
+          "kind": "viewport",
+          "ref": "Two-Up Block on Desktop",
+          "caption": "Close-up des oberen Blocks. Auf @lg pairt das Markup zu einem Zwei-Spalten-Grid (`c-pdp__blockimages--twoimages`). Selbe Daten wie auf Mobile, andere Komposition."
+        },
+        {
+          "image": "public/thumbnails/bottega-evidence-sticky-cta.png",
+          "kind": "viewport",
+          "ref": "Sticky Purchase Sheet",
+          "caption": "Scroll bei y≈2400px. Während Footer und Newsletter passieren, hält `.l-pdp__bottom__sheet.sticky-bar-white` Produktname, Preis und CTA fixiert. Add-to-Cart bleibt erreichbar, ohne dass die Discovery unterbrochen wird."
+        }
+      ]
     }
   ]
 }

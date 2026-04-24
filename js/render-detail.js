@@ -11,6 +11,8 @@ const els = {
   spacing: document.getElementById("d-spacing"),
   grid: document.getElementById("d-grid"),
   patterns: document.getElementById("d-patterns"),
+  shots: document.getElementById("d-shots"),
+  shotsSection: document.getElementById("d-shots-section"),
   notes: document.getElementById("d-notes"),
   stack: document.getElementById("d-stack"),
 };
@@ -175,6 +177,38 @@ function render(p) {
         card.appendChild(w);
       }
       els.patterns.appendChild(card);
+    }
+  }
+
+  const shots = p.evidence_shots || [];
+  els.shots.replaceChildren();
+  if (!shots.length) {
+    els.shotsSection.style.display = "none";
+  } else {
+    for (const s of shots) {
+      const fig = document.createElement("figure");
+      fig.className = "shot" + (s.kind === "fullpage" ? " fullpage" : "");
+      const a = document.createElement("a");
+      a.href = s.image;
+      a.target = "_blank";
+      a.rel = "noopener";
+      const img = document.createElement("img");
+      img.src = s.image;
+      img.alt = `${p.name} — ${s.ref}`;
+      img.loading = "lazy";
+      a.appendChild(img);
+      fig.appendChild(a);
+      const cap = document.createElement("figcaption");
+      const ref = document.createElement("span");
+      ref.className = "ref";
+      ref.textContent = s.ref;
+      cap.appendChild(ref);
+      const txt = document.createElement("span");
+      txt.className = "txt";
+      txt.textContent = s.caption;
+      cap.appendChild(txt);
+      fig.appendChild(cap);
+      els.shots.appendChild(fig);
     }
   }
 

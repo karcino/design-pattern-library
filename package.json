@@ -1,0 +1,13 @@
+{
+  "name": "design-pattern-library",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "python3 -m http.server 8810",
+    "capture": "node scripts/annotate-shots.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.59.0"
+  }
+}
